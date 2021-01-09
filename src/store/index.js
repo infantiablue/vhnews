@@ -17,7 +17,7 @@ export default createStore({
 	actions: {
 		loadLatestTopItems(context) {
 			api
-				.get('topstories.json?print=pretty&limitToFirst=10&orderBy="$key"')
+				.get('topstories.json?limitToFirst=10&orderBy="$key"')
 				.then((res) => {
 					res.data.forEach((id) => {
 						api.get(`item/${id}.json?print=pretty`).then((res) => {
