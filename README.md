@@ -1,2 +1,11 @@
 # vhnews
-A basic SPA HackerNews UI, built on top of Vue 3, Vite and Tailwind CSS
+
+VueJS is rising as one of the most popular front end framework, compared with React (supported by Facebook) and Angular (from Google). Recently, it has been updated to version 3 with many new exciting features. The proejct is created for learning & experimenting purpose and to explore the new features of Vue 3.
+
+## The Demo
+
+- [Live Site](https://vhnews.netlify.app/)
+
+## The Tuorials
+
+- [Part 1](https://techika.com/2021/01/09/build-hackernews-reader-vuejs-tailwind-p1/)

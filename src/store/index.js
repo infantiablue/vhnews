@@ -13,15 +13,18 @@ export default createStore({
 		loadItems(state, item) {
 			state.items.push(item);
 		},
+		clearItems(state, item) {
+			state.items = [];
+		},
 	},
 	actions: {
-		loadLatestTopItems(context) {
+		fetchItems(context, type = "top") {
+			context.commit("clearItems");
 			api
-				.get('topstories.json?limitToFirst=10&orderBy="$key"')
+				.get(`${type}stories.json?limitToFirst=20&orderBy="$key"`)
 				.then((res) => {
 					res.data.forEach((id) => {
 						api.get(`item/${id}.json?print=pretty`).then((res) => {
-							// console.log(res.data);
 							context.commit("loadItems", res.data);
 						});
 					});

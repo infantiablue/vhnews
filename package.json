@@ -1,6 +1,6 @@
 {
   "name": "vhnews",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
@@ -21,5 +21,6 @@
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vite": "^2.0.0-beta.12"
-  }
+  },
+  "license": "MIT"
 }
