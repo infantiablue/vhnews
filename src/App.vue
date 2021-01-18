@@ -4,7 +4,7 @@
 			<h1 class="text-blue-700 dark:text-pink-400 text-3xl font-semibold text-center mb-5">Hacker News Headlines</h1>
 			<div class="flex justify-between">
 				<div class="text-pink-600 dark:text-yellow-200 text-xl">
-					<span :ref="`topic-${topic.key}`" class="tab mr-2 cursor-pointer font-serif" v-for="topic in topics" :key="topic.key" @click="loadStories(topic.key, $event)">{{ topic.title }}</span>
+					<span :ref="`topic-${topic.key}`" class="tab mr-3 cursor-pointer font-sans text-sm md:text-lg" v-for="topic in topics" :key="topic.key" @click="loadStories(topic.key, $event)">{{ topic.icon }} {{ topic.title }}</span>
 				</div>
 				<div class="theme-switch-wrapper">
 					<span ref="toggleDark" class="h-6 w-6 flex items-center justify-center cursor-pointer bg-blue-500 dark:bg-green-500 rounded-full" @click="toggleDarkMode">☀️</span>
@@ -12,7 +12,7 @@
 			</div>
 			<Stories :items="items"></Stories>
 		</div>
-		<div class="mt-6 text-base leading-6 font-bold text-center">© 2020 Made with 🧡 by <a class="" href="https://twitter.com/infantiablue">Truong Phan</a>. Read <a target="blank" href="https://infantiablue.medium.com/hackernews-reader-with-vue-3-vite-2-and-vuex-4-part-1-247315ceb06a">the article</a>.</div>
+		<div class="mt-6 text-base leading-6 font-bold text-center">© 2020 Made with 🧡 by <a href="https://techika.com">Truong Phan</a></div>
 	</div>
 </template>
 
@@ -25,12 +25,12 @@ export default {
 	data() {
 		return {
 			topics: [
-				{ key: "top", title: "Top" },
-				{ key: "best", title: "Best" },
-				{ key: "new", title: "New" },
-				{ key: "ask", title: "Ask" },
-				{ key: "show", title: "Show" },
-				{ key: "job", title: "Jobs" },
+				{ key: "top", title: "Top", icon: "🔥" },
+				{ key: "best", title: "Best", icon: "👍" },
+				{ key: "new", title: "New", icon: "✨" },
+				{ key: "ask", title: "Ask", icon: "🙋" },
+				{ key: "show", title: "Show", icon: "📰" },
+				{ key: "job", title: "Jobs", icon: "💼" },
 			],
 		};
 	},
