@@ -2,7 +2,7 @@
 	<div v-if="items.length">
 		<div class="rounded-md bg-gray-100 px-3 py-1 my-1 h-auto dark:bg-gray-800" v-for="item in items" :key="item.id">
 			<div class="flex flex-wrap">
-				<a class="flex-auto font-sans text-gray-700 hover:text-pink-500 dark:text-indigo-400 dark:hover:text-pink-400" target="blank" :href="item.url">{{ item.title }}</a>
+				<a class="flex-auto font-sans text-gray-700 hover:text-pink-500 dark:text-indigo-400 dark:hover:text-pink-400" target="_blank" :href="item.url ? item.url : `https://news.ycombinator.com/item?id=${item.id}`">{{ item.title }}</a>
 				<div class="text-sm text-gray-400">
 					by <span class="italic font-medium dark:text-white">{{ item.by }}</span> from <span class="italic font-medium dark:text-white">{{ parseTime(item.time) }}</span>
 				</div>

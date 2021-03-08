@@ -7,7 +7,7 @@
 					<span :ref="`topic-${topic.key}`" class="tab mr-3 cursor-pointer font-sans text-sm md:text-lg" v-for="topic in topics" :key="topic.key" @click="loadStories(topic.key, $event)">{{ topic.icon }} {{ topic.title }}</span>
 				</div>
 				<div class="theme-switch-wrapper">
-					<span ref="toggleDark" class="h-6 w-6 flex items-center justify-center cursor-pointer bg-blue-500 dark:bg-green-500 rounded-full" @click="toggleDarkMode">☀️</span>
+					<span ref="toggleDark" class="h-6 w-6 flex items-center justify-center cursor-pointer bg-gray-600 dark:bg-blue-600 rounded-full" @click="toggleDarkMode">☀️</span>
 				</div>
 			</div>
 			<Stories :items="items"></Stories>
@@ -52,12 +52,12 @@ export default {
 			const setLight = () => {
 				htmlElm.classList.remove("dark");
 				localStorage.theme = "light";
-				this.$refs.toggleDark.textContent = "☀️";
+				this.$refs.toggleDark.textContent = "🌙";
 			};
 			const setDark = () => {
 				htmlElm.classList.add("dark");
 				localStorage.theme = "dark";
-				this.$refs.toggleDark.textContent = "🌙";
+				this.$refs.toggleDark.textContent = "☀️";
 			};
 			if (typeof theme === "string") {
 				if (theme == "dark") setDark();
