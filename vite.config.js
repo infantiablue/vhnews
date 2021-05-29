@@ -1,7 +1,8 @@
 import vue from "@vitejs/plugin-vue";
+import { babel } from "@rollup/plugin-babel";
 /**
  * @type {import('vite').UserConfig}
  */
 export default {
-	plugins: [vue()],
+	plugins: [vue(), babel({ babelHelpers: "bundled" })],
 };
