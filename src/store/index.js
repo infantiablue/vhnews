@@ -47,18 +47,17 @@ export default createStore({
 	},
 	actions: {
 		async fetchItems(context, topic) {
-			// init current page
-			let curPage;
 			// init local items storage
 			let items = [];
 			// if the requested topic is not the same with current topic, then reset relevant variables
 			if (topic !== this.state.topic) {
-				context.commit("setTopic", topic); // set the  new topic
 				context.commit("clearItems"); // clear items
+				context.commit("setTopic", topic); // set the  new topic
 				context.commit("setEndPagination", false); // reset
 				context.commit("setPage", 1); // reset
 			} else context.commit("increasePage"); // if not, inrease the number of current page
-			curPage = this.state.page;
+			// init current page
+			let curPage = this.state.page;
 			context.commit("setLoading", true);
 			// make the request
 			let resp = await api.get(`${this.state.topic}stories.json?limitToFirst=${ITEMS_PER_PAGE * curPage}&orderBy="$key"`);
@@ -66,7 +65,7 @@ export default createStore({
 			let result = resp.data.slice((curPage - 1) * ITEMS_PER_PAGE, ITEMS_PER_PAGE * curPage);
 			if (result.length === 0) context.commit("setEndPagination", true);
 			else
-				for await (let item of asyncGetter(resp.data)) {
+				for await (let item of asyncGetter(result)) {
 					items.push(item);
 				}
 			context.commit("loadItems", items);

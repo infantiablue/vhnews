@@ -65,6 +65,7 @@ export default {
 		...mapState(["items"]),
 		...mapState(["loading"]),
 		...mapState(["endPagination"]),
+		...mapState(["page"]),
 	},
 	created() {
 		if (!("topic" in localStorage)) localStorage.topic = "top";
