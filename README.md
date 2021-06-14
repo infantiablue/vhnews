@@ -14,3 +14,4 @@ VueJS is rising as one of the most popular front end framework, compared with Re
 
 - [Part 1](https://techika.com/2021/01/09/build-hackernews-reader-vuejs-tailwind-p1/)
 - [Part 2](https://techika.com/2021/01/16/build-hackernews-reader-vuejs-tailwind-p2/)
+- [Part 3](https://techika.com/2021/05/29/build-hackernews-reader-vuejs-tailwind-p3/)

@@ -62,10 +62,7 @@ export default {
 		};
 	},
 	computed: {
-		...mapState(["items"]),
-		...mapState(["loading"]),
-		...mapState(["endPagination"]),
-		...mapState(["page"]),
+		...mapState(["items", "loading", "endPagination", "page"]),
 	},
 	created() {
 		if (!("topic" in localStorage)) localStorage.topic = "top";
@@ -121,4 +118,3 @@ a:hover {
 	cursor: pointer;
 }
 </style>
->
